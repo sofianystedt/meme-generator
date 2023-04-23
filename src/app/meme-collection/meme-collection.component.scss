@@ -1,0 +1,113 @@
+$rounded-corners: true;
+
+@media screen and (max-width: 1399px) {
+
+    .parent {
+        display: flex;
+        flex-direction: row;
+        height: 280px;
+        width: calc(100vw - 150px);
+        max-width: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding: 10px;
+
+    }
+
+    .meme-collection-container {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        max-width: 100%;
+        overflow-x: auto;
+
+
+
+
+        .meme-collections {
+
+            width: auto; //or any percentage width you want
+            height: 95%;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+
+            img {
+                height: 95%;
+                object-fit: contain;
+            }
+
+            button {
+                width: fit-content;
+                border: none;
+                border-radius: if($rounded-corners, 20px, null);
+                padding: 10px 10px;
+                margin: 0px;
+                font-size: large;
+                background-color: transparent;
+                box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+                height: fit-content;
+                opacity: 0;
+                position: absolute;
+
+                &:hover {
+                    background-color: #9149a3;
+                    transform: scale(1.1);
+                    transition: all 0.3s;
+                    box-shadow: 0px 20px 30px -3px rgba(0, 0, 0, 0.1);
+                }
+            }
+
+            &:hover>button {
+                opacity: 1;
+            }
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 1400px) {
+    .meme-collections {
+        box-sizing: border-box;
+        width: 100%; //or any percentage width you want
+        padding: 20px;
+        overflow: hidden;
+        display: flex;
+        align-items: start;
+        justify-content: flex-end;
+
+        img {
+            width: 100%;
+            max-width: 85%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        button {
+            width: fit-content;
+            border: none;
+            border-radius: if($rounded-corners, 20px, null);
+            padding: 10px 10px;
+            margin: 0px;
+            font-size: large;
+            background-color: transparent;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+            opacity: 0;
+            position: absolute;
+
+            &:hover {
+                background-color: #9149a3;
+                transform: scale(1.1);
+                transition: all 0.3s;
+                box-shadow: 0px 20px 30px -3px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        &:hover>button {
+            opacity: 1;
+        }
+    }
+}

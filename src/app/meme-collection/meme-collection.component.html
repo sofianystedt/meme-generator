@@ -1,0 +1,9 @@
+<div class="parent">
+  <div class="meme-collection-container">
+    <div class="meme-collections" *ngFor="let meme of (memeCollection$ | async)">
+      <img src="{{meme.url}}" alt="{{meme.title}}">
+      <button (click)="onRemove(meme.id)" data-test="remove-button">❌</button>
+    </div>
+
+  </div>
+</div>
