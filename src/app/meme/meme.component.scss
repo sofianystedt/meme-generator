@@ -1,0 +1,92 @@
+$rounded-corners: true;
+
+@media screen and (max-width: 1399px) {
+
+    .meme-item {
+        box-sizing: border-box;
+        width: 100%; //or any percentage width you want
+        height: 450px;
+        padding: 10px 0px 20px 0px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        column-gap: 0px;
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            height: fit-content;
+
+            button {
+                border: none;
+                border-radius: if($rounded-corners, 30px, null);
+                padding: 10px 10px;
+                margin: 10px;
+                font-size: x-large;
+                background-color: white;
+                box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+                &:hover {
+                    background-color: #9149a3;
+                    transform: scale(1.1);
+                    transition: all 0.3s;
+                    box-shadow: 0px 20px 30px -3px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        img {
+            max-width: 70%;
+            max-height: 100%;
+            object-fit: contain;
+
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .meme-item {
+        box-sizing: border-box;
+        width: 100%; //or any percentage width you want
+        padding: 50px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        column-gap: 0px;
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            height: fit-content;
+
+            button {
+                border: none;
+                border-radius: if($rounded-corners, 30px, null);
+                padding: 10px 10px;
+                margin: 10px;
+                font-size: x-large;
+                background-color: white;
+                box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+                &:hover {
+                    background-color: #9149a3;
+                    transform: scale(1.1);
+                    transition: all 0.3s;
+                    box-shadow: 0px 20px 30px -3px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        img {
+            max-width: 90%;
+            height: auto;
+            max-height: 650px;
+            object-fit: contain;
+
+        }
+    }
+}
