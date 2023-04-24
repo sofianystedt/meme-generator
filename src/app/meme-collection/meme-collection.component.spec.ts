@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-
 import { MemeCollectionComponent } from "./meme-collection.component";
+import { StoreModule } from "@ngrx/store";
+import { provideMockStore } from "@ngrx/store/testing";
 
 describe("MemeCollectionComponent", () => {
   let component: MemeCollectionComponent;
@@ -8,6 +9,7 @@ describe("MemeCollectionComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [StoreModule.forRoot(provideMockStore)],
       declarations: [MemeCollectionComponent],
     }).compileComponents();
 

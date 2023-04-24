@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { Meme } from "../meme/meme.model";
+import { Component } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { selectMemeCollection } from "../state/meme.selectors";
 import { MemeActions } from "../state/meme.actions";

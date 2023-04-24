@@ -1,12 +1,19 @@
 {
   "name": "meme-generator",
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setup-jest.ts"
+    ],
+    "globalSetup": "jest-preset-angular/global-setup"
+  },
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "jest"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +36,8 @@
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
+    "jest": "^29.5.0",
+    "jest-preset-angular": "^13.0.1",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",

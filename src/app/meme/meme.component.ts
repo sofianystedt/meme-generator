@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Meme } from "./meme.model";
 import { Store } from "@ngrx/store";
-import { selectMemes } from "../state/meme.selectors";
+import { selectMeme } from "../state/meme.selectors";
 import { MemeActions } from "../state/meme.actions";
 
 @Component({
@@ -15,10 +15,8 @@ export class MemeComponent {
 
   ngOnInit() {
     this.store
-      .select(selectMemes)
-      .subscribe(
-        (memes) => (this.meme = memes.length > 0 ? memes[0] : undefined)
-      );
+      .select(selectMeme)
+      .subscribe((meme) => (this.meme = meme.length > 0 ? meme[0] : undefined));
   }
 
   onLike(memeId: string | undefined) {
