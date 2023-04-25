@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { MemeService } from "./meme/meme.service";
+import { MemeService } from "./service/meme.service";
 import { MemeApiActions } from "./state/meme.actions";
 import { Store } from "@ngrx/store";
 
