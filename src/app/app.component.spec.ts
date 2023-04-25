@@ -21,19 +21,19 @@ describe("AppComponent", () => {
     }).compileComponents();
   });
 
-  it("should create the app", () => {
+  test("should create the app", () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Meme-T*nder'`, () => {
+  test(`should have as title 'Meme-T*nder'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual("Meme-T*nder");
   });
 
-  it("should render title", () => {
+  test("should render title", () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
