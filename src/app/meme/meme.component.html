@@ -2,7 +2,7 @@
     <div class="btn-container">
         <button (click)="fetch.emit()">❌</button>
     </div>
-    <img src="{{meme?.url}}" alt="{{meme?.title}}">
+    <img class="memeimg" src="{{meme?.url}}" alt="{{meme?.title}}">
     <div class="btn-container">
         <button (click)="onLike(meme?.id)">❤️</button>
     </div>

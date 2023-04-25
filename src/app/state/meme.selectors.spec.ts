@@ -1,9 +1,5 @@
 import { Meme } from "../meme/meme.model";
-import {
-  selectMeme,
-  selectCollectionState,
-  selectMemeCollection,
-} from "./meme.selectors";
+import { selectMeme, selectMemeCollection } from "./meme.selectors";
 
 describe("Selectors", () => {
   const meme: Meme[] = [
