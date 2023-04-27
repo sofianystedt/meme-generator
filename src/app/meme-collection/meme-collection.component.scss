@@ -8,7 +8,7 @@ $rounded-corners: true;
         height: 280px;
         width: calc(100vw - 150px);
         max-width: 100%;
-        overflow: hidden;
+
         margin: 0;
         padding: 10px;
 
@@ -19,10 +19,6 @@ $rounded-corners: true;
         flex-direction: row;
         height: auto;
         max-width: 100%;
-        overflow-x: auto;
-
-
-
 
         .meme-collections {
 
@@ -33,9 +29,11 @@ $rounded-corners: true;
             flex-direction: column;
             align-items: end;
 
+
             img {
                 height: 95%;
                 object-fit: contain;
+                box-shadow: 0px 5px 15px -3px rgba(0, 0, 0, 0.445);
             }
 
             button {
@@ -83,6 +81,8 @@ $rounded-corners: true;
             max-width: 85%;
             height: auto;
             object-fit: contain;
+
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.445);
         }
 
         button {

@@ -22,7 +22,7 @@ h2 {
         margin: 0;
         padding: 0;
         justify-content: center;
-        overflow: hidden;
+
         width: 100vw;
 
         .content {
@@ -41,7 +41,9 @@ h2 {
             width: 100%;
             text-align: end;
             align-items: center;
-            overflow: clip;
+            position: fixed;
+            bottom: 50px;
+            left: 0;
 
             p {
                 font-size: 4rem;
@@ -49,6 +51,8 @@ h2 {
 
             .sidememes {
                 height: 90%;
+                position: relative;
+                overflow-x: scroll;
             }
         }
 

@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { Meme } from "./meme.model";
+import { Meme } from "../meme/meme.model";
 import { MemeApiResponse } from "../api/meme-api.model";
 
 @Injectable({ providedIn: "root" })

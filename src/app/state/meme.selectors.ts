@@ -1,7 +1,7 @@
 import { createSelector, createFeatureSelector } from "@ngrx/store";
 import { Meme } from "../meme/meme.model";
 
-export const selectMeme = createFeatureSelector<ReadonlyArray<Meme>>("memes");
+export const selectMeme = createFeatureSelector<ReadonlyArray<Meme>>("meme");
 
 export const selectCollectionState =
   createFeatureSelector<ReadonlyArray<string>>("collection");

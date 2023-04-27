@@ -17,7 +17,7 @@ import { MemeCollectionComponent } from "./meme-collection/meme-collection.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ memes: memeReducer, collection: collectionReducer }),
+    StoreModule.forRoot({ meme: memeReducer, collection: collectionReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent],
