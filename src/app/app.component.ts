@@ -1,7 +1,4 @@
 import { Component } from "@angular/core";
-import { MemeService } from "./service/meme.service";
-import { MemeApiActions } from "./state/meme.actions";
-import { Store } from "@ngrx/store";
 
 @Component({
   selector: "app-root",
@@ -10,19 +7,4 @@ import { Store } from "@ngrx/store";
 })
 export class AppComponent {
   title = "Meme-T*nder";
-
-  fetchMeme(_: any) {
-    this.memeService
-      .getMeme()
-      .subscribe(
-        (meme) =>
-          meme != null &&
-          this.store.dispatch(MemeApiActions.retrievedMeme({ meme: meme }))
-      );
-  }
-
-  constructor(private memeService: MemeService, private store: Store) {}
-  ngOnInit() {
-    this.fetchMeme({});
-  }
 }

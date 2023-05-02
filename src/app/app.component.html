@@ -1,14 +1,5 @@
 <div class="container">
-  <div class="content">
-    <h1>{{title}}</h1>
-    <app-meme class="meme" (fetch)="fetchMeme($event)"></app-meme>
-  </div>
-  <div class="side">
-    <p>❤️</p>
-    <div class="sidememes">
-      <app-meme-collection></app-meme-collection>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 
   <div class="footer">
     <p>This is a mock application made by Sofia Nystedt</p>

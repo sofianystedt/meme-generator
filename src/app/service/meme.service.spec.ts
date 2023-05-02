@@ -1,11 +1,7 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { TestBed } from "@angular/core/testing";
 import { MemeService } from "./meme.service";
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from "@angular/common/http/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { Meme } from "../meme/meme.model";
-import { MemeApiResponse } from "../api/meme-api.model";
 import { of } from "rxjs";
 
 describe("MemeService", () => {
@@ -28,7 +24,13 @@ describe("MemeService", () => {
   });
 
   test("should test getMeme", () => {
-    const res: Meme = { id: "hello", url: "string", title: "string" };
+    const res: Meme = {
+      id: 23,
+      url: "string",
+      title: "string",
+      postLink: "memelink",
+      subreddit: "postUrl",
+    };
     const url = "https://meme-api.com/gimme/wholesomememes";
     jest.spyOn(httpClientSpy, "get").mockReturnValue(of(res));
     service.getMeme();

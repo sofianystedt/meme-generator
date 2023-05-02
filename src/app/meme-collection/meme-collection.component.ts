@@ -12,7 +12,7 @@ export class MemeCollectionComponent {
   memeCollection$ = this.store.select(selectMemeCollection);
   constructor(private store: Store) {}
 
-  onRemove(memeId: string) {
+  onRemove(memeId: number) {
     this.store.dispatch(MemeActions.removeMeme({ memeId }));
   }
 }

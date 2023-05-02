@@ -19,9 +19,11 @@ describe("MemeReducer", () => {
     test("should retrieve meme and update the state in an immutable way", () => {
       const { initialState } = fromReducer;
       const newState: Readonly<Meme> = {
-        id: "firstMemeId",
+        id: 1,
         url: "memeUrl",
         title: "memeTitle",
+        postLink: "memelink",
+        subreddit: "postUrl",
       };
       const action = MemeApiActions.retrievedMeme({ meme: newState });
       const state = fromReducer.memeReducer(initialState, action);

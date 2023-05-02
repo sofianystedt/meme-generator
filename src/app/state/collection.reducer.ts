@@ -1,7 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import { MemeActions } from "./meme.actions";
 
-export const initialState: ReadonlyArray<string> = [];
+export const initialState: ReadonlyArray<number> = [];
 
 export const collectionReducer = createReducer(
   initialState,

@@ -6,5 +6,7 @@ export const initialState: ReadonlyArray<Meme> = [];
 
 export const memeReducer = createReducer(
   initialState,
-  on(MemeApiActions.retrievedMeme, (state, { meme }) => [meme, ...state])
+  on(MemeApiActions.retrievedMeme, (state: ReadonlyArray<Meme>, { meme }) => {
+    return [meme, ...state];
+  })
 );

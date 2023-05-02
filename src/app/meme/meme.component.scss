@@ -50,7 +50,8 @@ $rounded-corners: true;
     .meme-item {
         box-sizing: border-box;
         width: 100%; //or any percentage width you want
-        padding: 50px;
+        padding: 40px;
+        margin: 0;
         overflow: hidden;
         display: flex;
         flex-direction: row;
@@ -68,7 +69,7 @@ $rounded-corners: true;
                 border-radius: if($rounded-corners, 30px, null);
                 padding: 10px 10px;
                 margin: 10px;
-                font-size: x-large;
+                font-size: xx-large;
                 background-color: white;
                 box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 
@@ -82,7 +83,7 @@ $rounded-corners: true;
         }
 
         img {
-            max-width: 90%;
+            max-width: 80%;
             height: auto;
             max-height: 650px;
             object-fit: contain;

@@ -4,7 +4,7 @@ import { Meme } from "../meme/meme.model";
 export const selectMeme = createFeatureSelector<ReadonlyArray<Meme>>("meme");
 
 export const selectCollectionState =
-  createFeatureSelector<ReadonlyArray<string>>("collection");
+  createFeatureSelector<ReadonlyArray<number>>("collection");
 
 export const selectMemeCollection = createSelector(
   selectMeme,

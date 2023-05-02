@@ -1,5 +1,7 @@
 export interface Meme {
-  id: string;
+  id: number;
   url: string;
   title: string;
+  postLink: string;
+  subreddit: string;
 }
