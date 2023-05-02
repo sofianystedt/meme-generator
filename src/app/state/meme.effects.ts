@@ -13,7 +13,6 @@ export class MemeEffects {
       ofType(MemeApiActions.fetchMeme.type),
       exhaustMap((action: any) =>
         this.memeService.getMeme().pipe(
-          tap((meme) => console.log("meme", meme)),
           map((meme) =>
             (action.ids as Meme["id"][]).findIndex((id) => id == meme.id) === -1
               ? MemeApiActions.retrievedMeme({ meme })
