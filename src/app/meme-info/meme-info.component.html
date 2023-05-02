@@ -1,0 +1,12 @@
+<div class="meme-info-container" *ngIf="meme">
+    <img class="memeimg" src="{{meme.url}}" alt="{{meme.title}}">
+    <div class="meme-information">
+        <h2>Meme information</h2>
+        <p><b>Meme-title:</b> {{meme.title}}</p>
+        <p><b>Meme-url:</b> <a href="{{meme.url}}"> {{meme.url}}</a></p>
+        <p><b>Meme-postLink:</b> <a href="{{meme.postLink}}"> {{meme.postLink}}</a></p>
+        <p><b>Meme-subreddit:</b> {{meme.subreddit}}</p>
+    </div>
+
+    <button type="button" (click)="goBack()">go back</button>
+</div>

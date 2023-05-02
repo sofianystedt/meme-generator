@@ -2,12 +2,10 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { MemeComponent } from "./meme.component";
 import { DefaultProjectorFn, MemoizedSelector, StoreModule } from "@ngrx/store";
 import { MockStore, provideMockStore } from "@ngrx/store/testing";
-import { memeReducer } from "../state/meme.reducer";
-import { collectionReducer } from "../state/collection.reducer";
-import { By } from "@angular/platform-browser";
 import { Meme } from "./meme.model";
 import { selectMeme } from "../state/meme.selectors";
 import { MemeActions } from "../state/meme.actions";
+import { HomeComponent } from "../home/home.component";
 
 describe("MemeComponent", () => {
   let component: MemeComponent;
@@ -31,9 +29,11 @@ describe("MemeComponent", () => {
 
     mockMemeSelector = store.overrideSelector(selectMeme, [
       {
-        id: "firstMemeId",
+        id: 1,
         url: "memeUrl",
         title: "memeTitle",
+        postLink: "memelink",
+        subreddit: "postUrl",
       },
     ]);
 
@@ -46,9 +46,9 @@ describe("MemeComponent", () => {
   });
 
   test("like method should dispatch likeMeme", () => {
-    component.onLike("firstMemeId");
+    component.onLike(1);
     expect(store.dispatch).toHaveBeenCalledWith(
-      MemeActions.likeMeme({ memeId: "firstMemeId" })
+      MemeActions.likeMeme({ memeId: 1 })
     );
   });
 });

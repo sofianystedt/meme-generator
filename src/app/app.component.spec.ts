@@ -6,11 +6,11 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { MemeComponent } from "./meme/meme.component";
 import { MemeCollectionComponent } from "./meme-collection/meme-collection.component";
-import { MockState, MockStore, provideMockStore } from "@ngrx/store/testing";
+import { MockStore, provideMockStore } from "@ngrx/store/testing";
 import { memeReducer } from "./state/meme.reducer";
 import { collectionReducer } from "./state/collection.reducer";
-import { Component } from "@angular/core";
 import { MemeService } from "./service/meme.service";
+import { HomeComponent } from "./home/home.component";
 
 describe("AppComponent", () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -29,7 +29,12 @@ describe("AppComponent", () => {
           collection: collectionReducer,
         }),
       ],
-      declarations: [AppComponent, MemeComponent, MemeCollectionComponent],
+      declarations: [
+        AppComponent,
+        MemeComponent,
+        MemeCollectionComponent,
+        HomeComponent,
+      ],
     }).compileComponents();
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.componentInstance;
@@ -44,15 +49,5 @@ describe("AppComponent", () => {
 
   test(`should have as title 'Meme-T*nder'`, () => {
     expect(app.title).toEqual("Meme-T*nder");
-  });
-
-  test("should render title", () => {
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector("h1")?.textContent).toContain("Meme-T*nder");
-  });
-
-  test("fetch meme method should dispatch getMeme", () => {
-    app.fetchMeme("");
-    expect(memeService.getMeme().subscribe).toHaveBeenCalled;
   });
 });

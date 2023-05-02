@@ -2,7 +2,8 @@
   <div class="meme-collection-container">
     <div class="meme-collections" *ngFor="let meme of (memeCollection$ | async)">
       <img src="{{meme.url}}" alt="{{meme.title}}">
-      <button (click)="onRemove(meme.id)" data-test="remove-button">❌</button>
+      <a routerLink="./meme-info" [queryParams]="{ id: meme.id }"><button class="info-btn">🔎</button></a>
+      <button class="remove-btn" (click)="onRemove(meme.id)" data-test="remove-button">❌</button>
     </div>
 
   </div>

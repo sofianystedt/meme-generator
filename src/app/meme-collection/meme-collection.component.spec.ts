@@ -8,6 +8,9 @@ import { Meme } from "../meme/meme.model";
 import { selectMeme, selectMemeCollection } from "../state/meme.selectors";
 import { MemeActions } from "../state/meme.actions";
 import { By } from "@angular/platform-browser";
+import { RouterTestingModule } from "@angular/router/testing";
+import { HomeComponent } from "../home/home.component";
+import { MemeInfoComponent } from "../meme-info/meme-info.component";
 
 describe("MemeCollectionComponent", () => {
   let component: MemeCollectionComponent;
@@ -22,7 +25,13 @@ describe("MemeCollectionComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [provideMockStore()],
-      imports: [],
+      imports: [
+        RouterTestingModule.withRoutes([
+          { path: "", component: HomeComponent },
+          { path: "home", component: HomeComponent },
+          { path: "meme-info", component: MemeInfoComponent },
+        ]),
+      ],
       declarations: [MemeCollectionComponent],
     }).compileComponents();
 
@@ -32,9 +41,11 @@ describe("MemeCollectionComponent", () => {
 
     mockMemeCollectionSelector = store.overrideSelector(selectMemeCollection, [
       {
-        id: "firstMemeId",
+        id: 1,
         url: "memeUrl",
         title: "memeTitle",
+        postLink: "memelink",
+        subreddit: "postUrl",
       },
     ]);
     fixture.detectChanges();
@@ -46,23 +57,27 @@ describe("MemeCollectionComponent", () => {
   });
 
   test("remove method should dispatch remove action", () => {
-    component.onRemove("firstMemeId");
+    component.onRemove(1);
     expect(store.dispatch).toHaveBeenCalledWith(
-      MemeActions.removeMeme({ memeId: "firstMemeId" })
+      MemeActions.removeMeme({ memeId: 1 })
     );
   });
 
   test("should update the UI when the store changes", () => {
     mockMemeCollectionSelector.setResult([
       {
-        id: "firstMemeId",
+        id: 1,
         url: "memeUrl",
         title: "memeTitle",
+        postLink: "memelink",
+        subreddit: "postUrl",
       },
       {
-        id: "secondMemeId",
+        id: 2,
         url: "memeUrl2",
         title: "memeTitle2",
+        postLink: "memelink",
+        subreddit: "postUrl",
       },
     ]);
 
