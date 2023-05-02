@@ -20,7 +20,6 @@ export class MemeComponent {
 
   ngOnInit() {
     this.store.select(selectMeme).subscribe((memes) => {
-      console.log("sub", memes);
       this.meme = memes.length > 0 ? memes[0] : undefined;
       this.memes = memes;
     });
